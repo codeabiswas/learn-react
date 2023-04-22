@@ -4,6 +4,7 @@ import ArticlePage from "./pages/ArticlePage";
 import ArticlesListPage from "./pages/ArticlesListPage";
 import ContactPage from "./pages/ContactPage";
 import NavigationBar from "./NavigationBar";
+import NotFoundPage from "./pages/NotFoundPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         {/* URL parameter :articleId */}
         <Route path="/articles/:articleId" element={<ArticlePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        {/* For all paths not defined above, show the Not Found Page */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
